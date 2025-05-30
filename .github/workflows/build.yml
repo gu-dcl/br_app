@@ -2,8 +2,6 @@ name: Build EXE with PyInstaller
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
         pyinstaller --onefile --add-data "data;data" --add-data "model;model" app.py
 
     - name: Upload EXE artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@master
       with:
         name: built-exe
         path: dist/app.exe
