@@ -29,7 +29,7 @@ jobs:
           pyinstaller --onefile --add-data "data;data" --add-data "model;model" app_download_on_generate.py
 
       - name: Upload EXE artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: built-exe
           path: dist/app_download_on_generate.exe
